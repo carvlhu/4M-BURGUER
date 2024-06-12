@@ -1,0 +1,33 @@
+<section class="detalhes">
+    <header class="header-detalhes">
+        <div class="header-detalhes-content">
+            <a href="/cardapio">< Voltar</a>
+        </div>
+        <div class="header-detalhes-content">
+            <a href="/"><img src="/images/logo.svg" alt=""></a>
+        </div>
+    </header>
+
+    <section class="container-detalhes">
+
+        {{#each DetalhesComida}}
+
+        <div class="box-detalhes">
+            <div class="detalhes-image">
+                <h1>{{this.Tipo}}</h1>
+                <img width="300" src="{{IMGComida}}" alt="">
+            </div>
+            <div class="detalhes-descricao">
+                <h1>{{this.NomeComida}}</h1>
+                <h2><span style="color: #F2CB05;">R$</span>{{this.PrecoComida}}</h2>
+                <p>{{this.DescricaoComida}}</p>
+                <img src="{{IMGPais}}" alt="">
+                <form action="/fazerPedido/{{this.ComidaID}}" method="post"><button class="pedido" onclick="pedido()">Fazer Pedido</button></form>
+            </div>
+        </div>
+
+        {{/each}}
+
+    </section>
+
+</section>

@@ -1,0 +1,111 @@
+<section class="home-cardapio">
+    <section class="menu">
+        <div class="header-menu">
+            <div class="header-username">
+                <p>Olá, administrador</p>
+            </div>
+        </div>
+        <div class="options-menu">
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto">Todos os Pratos</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Hambúrguer">Hambúrguers</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Porções">Porções</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Bebidas">Bebidas</a>
+            </div>
+
+            <div class="option-adm">
+                <div class="option-select">
+                    <a href="/ADM/tabelaPedidos">Pedidos</a>
+                </div>
+                <div class="option-select">
+                    <a href="/ADM/adicionarProduto">Adicionar Produto</a>
+                </div>
+                <div style="display: flex; widht: 100%; justify-content: center; margin-top: 20px;" class="button-sair">
+                    <form style="margin-left: 15px;" action="/Sair"><button onclick="Sair()" type="submit">Sair</button></form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="adicionar">
+
+        {{> menuADM}}
+
+        <div class="cardapio-tittle">
+            <h1>ADICIONAR NOVO PRODUTO</h1>
+        </div>
+
+        <div class="box-adicionar">
+
+            <form action="/ADM/GerenciarProduto/Adicionar" method="post">
+
+                <div class="container-adicionar">
+
+                    <div class="input-parts">
+
+                        <div class="input-adicionar">
+                            <label for="NomeProduto">Nome: </label>
+                            <input placeholder="Digite o Nome do Produto" id="NomeProduto" name="NomeProduto"
+                                type="text" required>
+                        </div>
+
+                        <div class="input-adicionar">
+                            <label for="Descricao">Descrição: </label>
+                            <input placeholder="Descrição do Produto" type="text" id="Descricao" name="Descricao"
+                                required>
+                        </div>
+
+                        <div class="input-adicionar">
+                            <label for="Valor">Valor: </label>
+                            <input placeholder="R$" type="number" id="Valor" name="Valor" required
+                                step="0.010">
+                        </div>
+
+                    </div>
+
+                    <div class="input-parts">
+                        
+                        <div class="input-adicionar">
+                            <label for="URLProduto">Produto: </label>
+                            <input placeholder="URL da imagem do Prouto" type="text" id="URLProduto" name="URLProduto"
+                                required>
+                        </div>
+
+                        <div class="input-adicionar">
+                            <label for="URLPais">País:</label>
+                            <input placeholder="URL da imagem do País" type="text" id="URLPais" name="URLPais" required>
+                        </div>
+
+                        <div class="input-adicionar">
+                            <label for="Tipo">Tipo</label>
+                            <select name="Tipo" id="Tipo" required>
+                                <option value="Hamburguer">HAMBÚRGUER</option>
+                                <option value="Porcoes">PORÇÕES</option>
+                                <option value="Bebidas">BEBIDAS</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {{!-- Button - Adicionar, Excluir e Editar --}}
+                <div class="button-adicionar">
+                    <button type="submit">Adicionar</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</section>

@@ -1,0 +1,125 @@
+<section class="home-cardapio">
+
+    <section class="menu">
+        <div class="header-menu">
+            <div class="header-username">
+                <p>Olá, administrador</p>
+            </div>
+        </div>
+        <div class="options-menu">
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto">Todos os Pratos</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Hambúrguer">Hambúrguers</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Porções">Porções</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Bebidas">Bebidas</a>
+            </div>
+
+            <div class="option-adm">
+                <div class="option-select">
+                    <a href="/ADM/tabelaPedidos">Pedidos</a>
+                </div>
+                <div class="option-select">
+                    <a href="/ADM/adicionarProduto">Adicionar Produto</a>
+                </div>
+                <div style="display: flex; widht: 100%; justify-content: center; margin-top: 20px;" class="button-sair">
+                    <form style="margin-left: 15px;" action="/Sair"><button onclick="Sair()" type="submit">Sair</button></form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section style="background-color: black;" class="cardapio">
+
+        {{> menuADM}}
+
+        <div class="cardapio-tittle">
+            <h1>EDITANDO PRODUTO DE ID: {{#each CardEdit}}{{this.ComidaID}}{{/each}}</h1>
+        </div>
+
+        <div class="img-edit-produto">
+            {{#each CardEdit}}
+                <div class="img-edit-content">
+                    <img width="150" src="{{this.IMGComida}}" alt="">
+                </div>
+                <div class="img-edit-content">
+                    <img style="border-radius: 10px;" width="80" src="{{this.IMGPais}}" alt="">
+                </div>
+            {{/each}}
+        </div>
+
+        <div style="padding: 0;" class="box-adicionar">
+
+            <form action="/ADM/GerenciarProduto/Editar" method="post">
+
+                <div style="padding: 0;" class="container-adicionar">
+
+                    {{#each CardEdit}}
+                    <div class="input-parts">
+
+                        <input type="hidden" id="id" name="id" type="text" value={{this.ComidaID}}>
+
+                        <div class="input-adicionar">
+                            <label for="nomeProduto">Nome:</label>
+                            <input id="nomeProduto" name="nomeProduto" value="{{this.NomeComida}}" type="text">
+                        </div>
+
+                        <div class="input-adicionar">
+                            <label for="descricao">Descrição:</label>
+                            <input id="descricao" name="descricao" value="{{this.DescricaoComida}}" type="text">
+                        </div>
+
+                        <div class="input-adicionar">
+                            <label for="valor">Valor:</label>
+                            <input id="valor" name="valor" value="{{this.PrecoComida}}" type="text">
+                        </div>
+                    </div>
+
+                    <div class="input-parts">
+
+                        <div class="input-adicionar">
+                            <label for="urlProduto">Produto:</label>
+                            <input id="urlProduto" name="urlProduto" value="{{this.IMGComida}}" type="text">
+
+                        </div>
+
+                        <div class="input-adicionar">
+                            <label for="urlPais">País:</label>
+                            <input id="urlPais" name="urlPais" value="{{this.IMGPais}}" type="text">
+
+                        </div>
+
+                        <div class="input-adicionar">
+                            <label for="tipo">Tipo:</label>
+                            <select name="tipo" id="tipo" required>
+                                <option value="Hamburguer">Hambúrguer</option>
+                                <option value="Porcoes">Porções</option>
+                                <option value="Bebidas">Bebidas</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                {{/each}}
+
+                <div class="button-adicionar">
+                    <button onclick="Edicao()" type="submit">Editar</button>
+                </div>
+
+        </div>
+
+        </form>
+
+        </div>
+
+    </section>
+
+</section>

@@ -1,0 +1,71 @@
+<section class="home-cardapio">
+    <section class="menu">
+        <div class="header-menu">
+            <div class="header-username">
+                <p>Olá, administrador</p>
+            </div>
+        </div>
+        <div class="options-menu">
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto" >Todos os Pratos</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Hambúrguer">Hambúrguers</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Porções">Porções</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Bebidas">Bebidas</a>
+            </div>
+
+            <div class="option-adm">
+                <div class="option-select">
+                    <a href="/ADM/tabelaPedidos">Pedidos</a>
+                </div>
+                <div class="option-select">
+                    <a href="/ADM/adicionarProduto">Adicionar Produto</a>
+                </div>
+                <div style="display: flex; widht: 100%; justify-content: center; margin-top: 20px;" class="button-sair">
+                    <form style="margin-left: 15px;" action="/Sair"><button onclick="Sair()" type="submit">Sair</button></form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="cardapio">
+
+        {{> menuADM}}
+
+        <div class="cardapio-tittle">
+            <h1>CÁRDAPIO FILTRADO</h1>
+        </div>
+
+
+        <div class="content-cardapio">
+            {{#each CardComida}}
+            <div class="container-cardapio">
+                <div class="image-cardapio">
+                    <img src="{{this.IMGComida}}" alt="">
+                </div>
+                <div class="description-cardapio">
+                    <h2 style="color: #F2CB05;">{{this.NomeComida}}</h2>
+                    <p>R$ <span style="color: #F2CB05">{{this.PrecoComida}}</span></p>
+                    <h4>ID: {{this.ComidaID}}</h4>
+                </div>
+                <div class="edit-cardapio">
+                    <a href="/ADM/EditarProduto/{{this.ComidaID}}"><i style="color: #1853c7;" class="fa-regular fa-pen-to-square"></i></a>
+
+                    <form class="form-excluir" method="post" action="/ADM/GerenciarProduto/Excluir/{{this.ComidaID}}">
+                        <input class="excluir" type="submit" value="🗑️">
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </section>
+
+</section>

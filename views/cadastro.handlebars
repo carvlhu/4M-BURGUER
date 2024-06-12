@@ -1,0 +1,68 @@
+<section class="login">
+
+    <div class="login-tittle">
+        <a href="/"><img src="/images/logo.svg" alt=""></a>
+        <h2>CADASTRO</h2>
+
+    </div>
+
+    <div class="container-login">
+
+        <div class="container-login-infos">
+
+
+            <div class="inputs-account">
+                <form action="/cadastro/InsertCliente" method="post" class="form-login">
+
+                    <div class="container-inputs">
+
+                        <div class="inputs-box">
+                            <div class="input-login">
+                                <label for="Email">Nome:</label>
+                                <div class="input-type">
+                                    <input type="text" id="Nome" name="Nome" required>
+                                </div>
+                            </div>
+
+                            <div class="input-login">
+                                <label for="Senha">Email:</label>
+                                <div class="input-type">
+                                    <input type="text" id="Email" name="Email" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="inputs-box">
+                            <div class="input-login">
+                                <label for="Senha">Senha:</label>
+                                <div class="input-type">
+                                    <input type="password" id="Senha" name="Senha" required>
+                                </div>
+
+                            </div>
+
+                            <div class="input-login">
+                                <label for="Senha">Endereço: </label>
+                                <div class="input-type">
+                                    <input type="text" id="Endereco" name="Endereco" required>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="submit-login">
+                        <button onclick="cadastro()" type="submit">Cadastrar</button>
+                        <a href="/login">Já tem uma conta? <span style="color: #f2cb05;"> FAÇA LOGIN</span></a>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

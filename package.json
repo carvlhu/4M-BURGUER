@@ -1,0 +1,17 @@
+{
+    "name": "4m-burguer",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon ./index.js localhost 3000"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "express-handlebars": "^7.1.2",
+        "express-session": "^1.18.0",
+        "mysql2": "^3.9.7",
+        "nodemon": "^3.1.0"
+    }
+}

@@ -1,0 +1,74 @@
+<section class="home-cardapio">
+    <section class="menu">
+        <div class="header-menu">
+            <div class="header-username">
+                <p>Olá, administrador</p>
+            </div>
+        </div>
+        <div class="options-menu">
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto">Todos os Pratos</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Hambúrguer">Hambúrguers</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Porções">Porções</a>
+            </div>
+            <div class="option-select">
+                <a href="/ADM/GerenciarProduto/Bebidas">Bebidas</a>
+            </div>
+
+            <div class="option-adm">
+                <div class="option-select">
+                    <a href="/ADM/tabelaPedidos">Pedidos</a>
+                </div>
+                <div class="option-select">
+                    <a href="/ADM/adicionarProduto">Adicionar Produto</a>
+                </div>
+                <div style="display: flex; widht: 100%; justify-content: center; margin-top: 20px;" class="button-sair">
+                    <form style="margin-left: 15px;" action="/Sair"><button onclick="Sair" type="submit">Sair</button></form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section style="background-color: black;" class="cardapio">
+
+        {{> menuADM}}
+
+        <div class="cardapio-tittle">
+            <h1>PEDIDOS</h1>
+        </div>
+
+        <div class="tabela-infos">
+            <table>
+                <tr>
+                    <th style="border-radius: 10px 0 0 0;">ID</th>
+                    <th>NOME</th>
+                    <th>PRODUTO</th>
+                    <th>PREÇO</th>
+                    <th>COMIDA ID</th>
+                    <th style="border-radius: 0 10px 0 0;">CLIENTE ID</th>
+                </tr>
+
+                {{#each infoPedidos}}
+                <tr>
+                    <td>{{this.PedidoID}}</td>
+                    <td>{{this.NomeCliente}}</td>
+                    <td>{{this.NomeComida}}</td>
+                    <td>R${{this.PrecoComida}}</td>
+                    <td>{{this.ComidaID}}</td>
+                    <td>{{this.ClienteID}}</td>
+                </tr>
+                {{/each}}
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+</section>

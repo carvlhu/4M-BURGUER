@@ -1,0 +1,1159 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Seymour+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "M PLUS 2", sans-serif;
+}
+
+/* Estilização do scrowbar */
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #F2F2F2;
+}
+
+body::-webkit-scrollbar {
+    width: 0.32vw;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #F2CB05;
+    border-radius: 0.12vw;
+}
+
+
+
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+.menu-mobile-adm {
+    display: none;
+}
+
+.menu-mobile-options {
+    display: none;
+}
+
+.menu-mobile-adm-options {
+    display: none;
+}
+
+.button-sair button {
+    margin: 0.7322vw 0;
+    padding: 0.880vw 2.20vw;
+    background-color: #F2CB05;
+    border: 0.15vw solid #F2CB05;
+    color: white;
+    font-weight: 700;
+    border-radius: 2vw;
+    transition: 0.5s;
+    font-size: 1.3vw;
+}
+
+.button-sair button:hover {
+    cursor: pointer;
+    border: 0.15vw solid #F2CB05;
+    background-color: transparent;
+    color: #F2CB05;
+    transition: 0.5s;
+}
+
+.welcome {
+    background-image: url('/images/home-background.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50vw;
+}
+
+header {
+    display: flex;
+    padding: 1.5vw 1.5vw 0px 3.1vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options-header {
+    display: flex;
+    align-items: center;
+}
+
+.links-header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 3.1vw;
+    font-size: 1.2vw;
+    transition: 0.5s;
+}
+
+.links-header a:hover {
+    color: #F2CB05;
+}
+
+.home-header {
+    width: 4vw;
+    height: 4vw;
+    border: solid 0.21vw #F2CB05;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7.8vw;
+}
+
+.main-infos-home {
+    width: 60%;
+    color: white;
+    padding: 6.25vw 0px 0px 6.25vw;
+}
+
+.infos-home h1 {
+    font-size: 3.1vw;
+    margin-bottom: 1.5vw;
+    font-weight: normal;
+}
+
+.infos-home p {
+    width: 75%;
+    font-size: 1.2vw;
+    margin-bottom: 3.1vw;
+}
+
+.infos-home a {
+    text-decoration: none;
+    border: #F2CB05 solid 0.2vw;
+    padding: 1.2vw 3.5vw;
+    border-radius: 7.8vw;
+    font-weight: 500;
+    font-size: 1.2vw;
+    color: white;
+    transition: 1s;
+}
+
+.infos-home a:hover {
+    background-color: #F2CB05;
+    transition: 1s;
+}
+
+.especiais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.1vw;
+}
+
+.especiais h1 {
+    font-size: 1.9vw;
+    color: #F2CB05;
+    font-family: "Oswald", sans-serif;
+}
+
+.especiais-images {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 1.5vw;
+}
+
+.especiais-image-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.especiais-image-content img{
+    width: 80%;
+}
+
+.especiais a {
+    margin-top: 3.1vw;
+    background-color: #F2CB05;
+    border: 0.1vw solid #F2CB05;
+    color: white;
+    padding: 0.7vw 2.3vw;
+    border-radius: 7.8vw;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.especiais a:hover {
+    background-color: white;
+    color: #F2CB05;
+}
+
+.feedback {
+    background-image: url('/images/feedback-background.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin-top: 3.1vw;
+    padding: 3.1vw;
+}
+
+.feedback-tittle {
+    padding: 0vw 0vw 0vw 12.5vw;
+}
+
+.feedback-tittle h1 {
+    font-family: "Oswald", sans-serif;
+}
+
+.container-coment-content {
+    display: flex;
+    flex-direction: column;
+    width: 26.5vw;
+    height: 10.15vw;
+    background-color: white;
+    justify-content: center;
+    border-left: #F2CB57 0.3vw solid;
+    margin-left: 1.5vw;
+    padding: 0.7vw;
+    font-size: 1vw;
+}
+
+.container-coment {
+    padding: 4.6vw 0px 0px 7vw;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.especiarias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.1vw;
+}
+
+.especiarias-tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.especiarias-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flip-card {
+    cursor: pointer;
+    margin-top: 1.5vw;
+    width: 15.6vw;
+    height: 15.6vw;
+    background-color: transparent;
+    perspective: 100vw;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+}
+
+.flip-card .flip-card-back {
+    transform: rotateY(-180deg);
+}
+
+.flip-card-inner {
+    position: relative;
+    transition: 1.5s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-back,
+.flip-card-frony {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.flip-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.michelin {
+    background-image: url('/images/michelin.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    margin-top: 5vw;
+}
+
+.michelin-infos {
+    width: 70%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8vw 0;
+}
+
+.michelin-tittle {
+    font-family: "Oswald", sans-serif;
+    line-height: 5vw;
+}
+
+.michelin-tittle h2 {
+    color: #F2CB05;
+    font-size: 5.4vw;
+    font-weight: bolder;
+    text-shadow: #f2cb05a7 0.3vw 0.3vw 0.07vw;
+    font-family: "Oswald", sans-serif;
+}
+
+.michelin-tittle h1 {
+    font-size: 2.7vw;
+    font-family: "Oswald", sans-serif;
+}
+
+.michelin-infos p {
+    text-align: center;
+    width: 50%;
+    margin-top: 1.5vw;
+    font-size: 1.1vw;
+}
+
+.fundadores {
+    background-image: url('/images/fundadores.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 7.8vw;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.fundadores-tittle {
+    color: #F2CB05;
+    font-size: 3.5vw;
+    padding: 3.1vw;
+
+}
+
+.fundadores-tittle h2 {
+    font-family: "Oswald", sans-serif;
+}
+
+.fundadores-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.fundadores-info h1 {
+    font-size: 2.3vw;
+    padding: 0.7vw;
+}
+
+.fundadores span {
+    color: #F2CB57;
+}
+
+footer {
+    background-color: #131313;
+    width: 100%;
+    margin-top: 7.8vw;
+}
+
+.footer-content {
+    padding: 1.5vw 7.8vw 1.5vw 7.8vw;
+
+}
+
+.footer-infos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-infos-content {
+    width: 50%;
+}
+
+.footer-infos-content p {
+    color: white;
+    width: 90%;
+    margin-top: 1.5vw;
+}
+
+.fundadores-footer {
+    margin-top: 1.5vw;
+    color: white;
+    font-size: 0.7vw;
+    font-family: "Oswald", sans-serif;
+}
+
+.fundadores-footer span {
+    color: #F2CB05;
+
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.footer-contact p {
+    padding: 0.7vw 0;
+}
+
+.copy-rigth {
+    border-top: solid 0.15vw white;
+    margin-top: 2.3vw;
+    color: white;
+    padding: 0.7vw 0;
+}
+
+
+
+
+
+/* INICIANDO CSS DA PARTE DO CARDAPIO */
+
+
+
+
+
+.home-cardapio {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.menu {
+    background-color: black;
+    width: 29.29vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #F2CB05;
+}
+
+.header-menu {
+    display: flex;
+    color: #F2CB05;
+    align-items: center;
+    padding: 2.93vw 1.46vw;
+    text-align: center;
+}
+
+.header-menu p {
+    font-size: 1.46vw;
+}
+
+.header-username {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.header-menu a {
+    color: #F2CB05;
+    text-decoration: none;
+    font-size: 2.2vw;
+    font-weight: bolder;
+}
+
+.option-select {
+    padding: 1vw;
+    width: 100%;
+}
+
+.option-select button {
+    color: #F2CB05;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.17vw;
+    font-weight: 300;
+}
+
+.option-select a {
+    text-decoration: none;
+    color: #F2CB05;
+    font-weight: 300;
+    transition: 0.5s;
+    font-size: 1.17vw;
+}
+
+.option-select a:hover {
+    color: #f2cb0561;
+    transition: 0.5s;
+    font-size: 1.17vw;
+}
+
+.option-adm a:hover {
+    color: #f2cb0561;
+    transition: 0.5s;
+}
+
+.option-adm {
+    margin-top: 3.66vw;
+}
+
+.image-menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardapio {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.92vw 0;
+}
+
+.cardapio::-webkit-scrollbar {
+    width: 0.44vw;
+}
+
+.cardapio::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+.cardapio::-webkit-scrollbar-thumb {
+    background-color: #F2CB05;
+    border-radius: 0.12vw;
+}
+
+.content-cardapio {
+    display: flex;
+    padding: 2.19vw 0;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 0.37vw;
+    width: 90%;
+}
+
+.content-cardapio a{
+    text-decoration: none;
+    transition: 0.6s;
+}
+
+.content-cardapio a:hover {
+    transform: scale(0.95);
+    transition: 0.6s;
+}
+
+.cardapio-tittle {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cardapio-tittle h1 {
+    color: #F2CB05;
+    font-size: 2.19vw;
+    font-family: "Oswald", sans-serif;
+}
+
+.container-cardapio {
+    width: 16.8vw;
+    height: 22vw;
+    box-shadow: 0.14vw 0.14vw 0.73vw 0.14vw #c3c3c3;
+    margin: 1.46vw 0.37vw;
+    border-radius: 0.52vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-cardapio h2 {
+    color: #F2CB05;
+    font-family: "Seymour One", sans-serif;
+    font-weight: 600;
+    font-size: 1.4vw;
+    padding: 0.6vw 0;
+}
+
+.container-cardapio p, span {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+}
+
+.image-cardapio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7.3vw;
+}
+
+.image-cardapio img {
+    width: 60%;
+    padding-top: 2.92vw;
+}
+
+.edit-cardapio {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    font-size: 1.46vw;
+}
+
+.edit-cardapio a {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-cardapio a:hover {
+    transform: scale(1.15);
+    transition: 0.3s;
+}
+
+.form-excluir input:hover {
+    transform: scale(1.15);
+    transition: 0.5s;
+}
+
+.excluir {
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.description-cardapio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2.19vw;
+}
+
+.description-cardapio h2 {
+    font-family: "Seymour One", sans-serif;
+    font-weight: 600;
+    font-size: 1.4vw;
+    padding: 0.6vw 0;
+}
+
+.description-cardapio p, span {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+}
+
+
+
+
+.login {
+    background-image: url('/images/login-background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(176, 176, 176, 0.04);
+    padding: 2.6vw 4vw;
+    border-radius: 0.73vw;
+    justify-content: center;
+}
+
+.container-login-infos {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-tittle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2.92vw;
+}
+
+.login-tittle img {
+    width: 70%;
+    margin-bottom: 1.7vw;
+    align-items: center;
+}
+
+.login-tittle a {
+    align-items: center;
+    padding: 1.46vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-tittle h2 {
+    color: #F2CB05;
+    margin-top: 1.83vw;
+    font-size: 6.59vw;
+    font-family: "Oswald", sans-serif;
+    line-height: 2.92vw;
+}
+
+.inputs-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.container-inputs {
+    display: flex;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-login {
+    color: white;
+    display: flex;
+    align-content: end;
+    justify-content: end;
+}
+
+.input-login input {
+    border: none;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    height: 1.46vw;
+    font-size: 1.32vw;
+    font-weight: 200;
+    border-bottom: 0.07vw solid #F2CB05;
+    transition: 0.6s;
+}
+
+.input-login input:focus {
+    outline: none;
+    transform: 0.6s;
+    border-bottom: 0.07vw solid #ffffff;
+}
+
+.input-login label {
+    margin-top: 3.66vw;
+    font-weight: 300;
+    font-size: 1.2vw;
+}
+
+.input-type {
+    width: 20vw;
+    display: flex;
+    align-items: end;
+    margin-left: 0.7vw;
+}
+
+.submit-login {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    margin-top: 3.66vw;
+    transition: 0.3s;
+}
+
+.submit-login button {
+    background-color: #F2CB05;
+    color: white;
+    border: 0.15vw solid #F2CB05;
+    border-radius: 3.66vw;
+    padding: 0.95vw 3.3vw;
+    cursor: pointer;
+    margin-bottom: 1.46vw;
+    font-size: 1.09vw;
+    transition: 0.6s;
+    font-weight: 700;
+}
+
+.submit-login button:hover {
+    background-color: transparent;
+    color: #F2CB05;
+    font-weight: 700;
+    border: 0.15vw solid #F2CB05;
+    transition: 0.6s;
+}
+
+.submit-login a {
+    color: #c3c3c3;
+    text-decoration: none;
+    font-size: 1vw;
+}
+
+.inputs-box {
+    padding: 1.46vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.adicionar {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2.92vw 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.box-adicionar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1.46vw;
+}
+
+.box-adicionar form {
+    width: 100%;
+}
+
+.container-adicionar {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 1.46vw;
+}
+
+.input-parts {
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+    align-items: end;
+}
+
+.input-adicionar {
+    padding: 2.20vw 0;
+    color: white;
+}
+
+.input-adicionar label {
+    font-size: 1.2vw;
+}
+
+.input-adicionar input {
+    margin-left: 0.73vw;
+    border: none;
+    border-bottom: 0.07vw solid #F2CB05;
+    background-color: transparent;
+    color: white;
+    transition: 0.5s;
+    font-size: 1.22vw;
+}
+
+.input-adicionar input::-webkit-outer-spin-button,
+.input-adicionar input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.input-adicionar input:focus {
+    outline: none;
+    transition: 0.5s;
+    border-bottom: 0.07vw solid #ffffff;
+}
+
+.input-adicionar input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.input-adicionar input:focus:-moz-placeholder {
+    /* Firefox 18- */
+    color: transparent;
+}
+
+.input-adicionar input:focus::-moz-placeholder {
+    /* Firefox 19+ */
+    color: transparent;
+}
+
+.input-adicionar input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+.input-adicionar select {
+    padding: 0.36vw 0.73vw;
+    background-color: transparent;
+    color: #F2CB05;
+    font-size: 1.32vw;
+    border: none;
+    cursor: pointer;
+}
+
+.input-adicionar select option {
+    background-color: black;
+    cursor: pointer;
+}
+
+
+.button-adicionar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-adicionar button {
+    background-color: #F2CB05;
+    color: white;
+    padding: 1.09vw 2.05vw;
+    border: #F2CB05 0.14vw solid;
+    border-radius: 2.19vw;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.8s;
+    font-size: 1.1vw;
+}
+
+.button-adicionar button:hover {
+    transition: 0.5s;
+    border: 0.14vw solid #F2CB05;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.tabela {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2.92vw;
+    overflow: auto;
+    padding: 7.32vw;
+}
+
+.tabela-infos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.46vw;
+}
+
+.tabela-infos table {
+    text-align: center;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #131313;
+    border-radius: 0.73vw;
+}
+
+.tabela-infos th,
+.tabela-infos td {
+    font-size: 1.1vw;
+    padding: 0.73vw 1.82vw;
+    text-align: center;
+}
+
+.tabela-infos th {
+    background-color: #131313;
+    color: #F2CB05;
+}
+
+.tabela-infos td{
+    color: white;
+}
+
+.tabela-infos tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.405);
+}
+
+
+
+
+
+.img-edit-produto{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2.19vw;
+}
+
+.content-input-adicionar{
+    align-items: baseline;
+    display: flex;
+    justify-content: end;
+}
+
+.content-input-adicionar img{
+    margin-top: 1.10vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.detalhes{
+    width: 100%;
+    height: 100vh;
+    background-color: #f2cb5716;
+}
+
+.header-detalhes-content a{
+    text-decoration: none;
+    color: #F2CB05;
+    font-size: 1.46vw;
+    font-weight: bold;
+}
+
+.container-detalhes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-detalhes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58.5vw;
+    height: 29.3vw;
+    border-radius: 4vw;
+}
+
+.box-detalhes h1{
+    color: #F2CB05;
+    font-size: 1.83vw;
+}
+
+.detalhes-image{
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 0.73vw 0 0 0.73vw;
+    border: 2px solid #F2CB05;
+}
+
+.detalhes-image img{
+    width: 70%;
+}
+
+.detalhes-descricao{
+    height: 100%;
+    background-color: black;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    color: white;
+    border-radius: 0 0.73vw 0.73vw 0;
+    border: 0.14vw 0.14vw 0.14vw 0 solid #F2CB05;
+}
+
+.detalhes-descricao p{
+    text-align: center;
+    padding: 0.73vw;
+}
+
+.detalhes-descricao h1{
+    font-family: "Seymour One", sans-serif;
+    font-size: 1.8vw;
+}
+
+.detalhes-descricao img{
+    width: 20%;
+    border: 0.073vw solid #C3C3C3;
+    border-radius: 0.73vw;
+}
+
+.detalhes-descricao button{
+    transition: 0.5s;
+}
+
+.detalhes-descricao button:hover {
+    transform: scale(0.95);
+    transition: 0.5s;
+}
+
+.pedido{
+    background-color: #F2CB05;
+    color: white;
+    padding: 0.9vw 2.92vw;
+    border-radius: 1.46vw;
+    font-size: 1vw;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+

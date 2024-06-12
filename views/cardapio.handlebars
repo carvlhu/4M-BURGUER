@@ -1,0 +1,61 @@
+{{> menuUser}}
+
+<section class="home-cardapio">
+    <section class="menu">
+        <div class="header-menu">
+
+            <div class="header-username">
+                <p>Olá, {{#each NomeCliente}}{{this.NomeCliente}}{{/each}}</p>
+            </div>
+        </div>
+        <div class="options-menu">
+            <div class="option-select">
+                <a href="/cardapio">Todos os Pratos</a>
+            </div>
+            <div class="option-select">
+                <a href="/cardapio/Hambúrguer">Hambúrguers</a>
+            </div>
+            <div class="option-select">
+                <a href="/cardapio/Porções">Porções</a>
+            </div>
+            <div class="option-select">
+                <a href="/cardapio/Bebidas">Bebidas</a>
+            </div>
+        </div>
+
+        <div class="image-menu">
+            <a href="/"><img src="/images/logo.svg" alt=""></a>
+        </div>
+    </section>
+
+    <section class="cardapio">
+
+
+
+        <div class="cardapio-tittle">
+            <h1>CARDÁPIO</h1>
+            <div class="button-sair">
+                <form action="/Sair"><button onclick="Sair()" type="submit">Sair</button></form>
+            </div>
+        </div>
+
+
+        <div class="content-cardapio">
+            {{#each CardComida}}
+            <a href="/cardapio/produto/{{this.ComidaID}}">
+                <div class="container-cardapio">
+
+                        <img width="60%" style="padding-top: 0px ;" src="{{this.IMGComida}}" alt="">
+                        <h2>{{this.NomeComida}}</h2>
+                        <p style="color: black;">R$ <span style="color: #F2CB05">{{this.PrecoComida}}</span></p>
+
+                        <img width="20%" style="border-radius: 5px;" src="{{this.IMGPais}}" alt="">
+
+                </div>
+            </a>
+            {{/each}}
+        </div>
+
+    </section>
+
+</section>
