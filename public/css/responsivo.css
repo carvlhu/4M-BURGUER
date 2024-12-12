@@ -61,11 +61,13 @@
         width: 40px;
     }
 
-    .menu-mobile i, .menu-mobile-adm i {
+    .menu-mobile i,
+    .menu-mobile-adm i {
         font-size: 20px;
     }
 
-    .menu-mobile button, .menu-mobile-adm button {
+    .menu-mobile button,
+    .menu-mobile-adm button {
         background-color: transparent;
         border: none;
     }
@@ -88,7 +90,8 @@
         justify-content: center;
     }
 
-    .menu-mobile i, .menu-mobile-adm button:hover {
+    .menu-mobile i,
+    .menu-mobile-adm button:hover {
         cursor: pointer;
     }
 
@@ -110,7 +113,7 @@
         width: 100%;
         text-align: center;
         justify-content: center;
-        border-bottom:5px solid #F2CB05;
+        border-bottom: 5px solid #F2CB05;
     }
 
     .menu-mobile-adm-options a {
@@ -143,6 +146,10 @@
 
     .menu-buttton-sair button:hover {
         cursor: pointer;
+    }
+
+    .container-login {
+        padding: 1vw 0 2vw 1vw;
     }
 
     .especiais {
@@ -286,39 +293,15 @@
         padding: 10px;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     .login {
         background-image: none;
         background-color: black;
         justify-content: center;
-    }
-
-    .content-login {
-        height: 500px;
-    }
-
-    .container-login {
-        height: 300px;
-    }
-
-    .form-login {
-        height: 300px;
+        padding: 10vw 0;
     }
 
     .login-tittle h2 {
-        font-size: 40px;
+        font-size: 7vw;
     }
 
     .login-tittle img {
@@ -326,12 +309,12 @@
     }
 
     .input-login {
-        padding: 10px;
+        padding: 4%;
         justify-content: space-between;
     }
 
     .input-login label {
-        font-size: 20px;
+        font-size: 2vw;
     }
 
     .input-type {
@@ -339,7 +322,7 @@
     }
 
     .input-login input {
-        font-size: 15px;
+        font-size: 2vw;
         height: auto;
     }
 
@@ -350,7 +333,7 @@
 
     .submit-login a {
         font-size: 10px;
-        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .container-inputs {
@@ -372,11 +355,11 @@
         font-size: 20px;
     }
 
-    .cardapio{
+    .cardapio {
         padding: 0;
     }
 
-    .cardapio-tittle{
+    .cardapio-tittle {
         margin-top: 20px;
     }
 
@@ -407,7 +390,7 @@
         background-color: white;
     }
 
-    .button-sair{
+    .button-sair {
         display: none;
     }
 
@@ -454,7 +437,7 @@
         width: 100%;
     }
 
-    .header-detalhes-content img{
+    .header-detalhes-content img {
         width: 80%;
     }
 
@@ -466,29 +449,29 @@
         height: 100%;
     }
 
-    .container-adicionar{
+    .container-adicionar {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    .input-adicionar{
+    .input-adicionar {
         display: flex;
         justify-content: space-between;
         width: 100%;
     }
 
-    .input-parts{
+    .input-parts {
         width: 350px;
     }
 
-    .box-adicionar{
+    .box-adicionar {
         height: auto;
         overflow: hidden;
     }
 
 
-    .box-adicionar form{
+    .box-adicionar form {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -496,20 +479,20 @@
         margin-top: 50px;
     }
 
-    .input-adicionar label{
+    .input-adicionar label {
         font-size: 15px;
     }
 
-    .input-adicionar input{
+    .input-adicionar input {
         font-size: 15px;
         margin-left: 10px;
     }
 
-    .input-adicionar select{
+    .input-adicionar select {
         font-size: 15px;
     }
 
-    .button-adicionar button{
+    .button-adicionar button {
         font-size: 15px;
     }
 
@@ -520,7 +503,7 @@
 
 
     .tabela-infos th,
-    .tabela-infos td{
+    .tabela-infos td {
         font-size: 10px;
     }
 }
