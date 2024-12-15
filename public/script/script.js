@@ -1,24 +1,57 @@
-/* Alert - Sair da Conta */
 function Sair() {
-    alert('VOCÊ SAIU DA CONTA');
+    iziToast.show({
+        title: 'Atenção!',
+        message: 'Você saiu da conta.',
+        color: 'black',
+        position: 'topCenter',
+        timeout: 4000,
+        onClosed: function () {
+            window.location.href = '/login';
+        }
+    });
 }
 
-/* Alert - Conclusão de cadastro */
+// Função Cadastro
 function cadastro() {
-    alert('Cadastro realizado com sucesso');
+    iziToast.success({
+        title: 'Sucesso!',
+        message: 'Cadastro realizado com sucesso!',
+        position: 'topRight',
+        timeout: 4000,
+        onClosed: function () {
+            window.location.href = '/login';
+        }
+    });
 }
 
-/* Alert - Conclusão de Pedido */
+// Função Pedido
 function pedido() {
-    alert('Pedido realizado com sucesso');
+    iziToast.success({
+        title: 'Pedido Confirmado!',
+        message: 'Seu pedido foi realizado com sucesso.',
+        position: 'topRight',
+        timeout: 4000,
+        onClosed: function () {
+            window.location.href = '/cardapio';
+        }
+    });
 }
 
-/* Alert - Editar */
+// Função Edicao
 function Edicao() {
-    alert('Produto Editado');
+    iziToast.info({
+        title: 'Editado!',
+        message: 'Produto editado com sucesso.',
+        position: 'topRight',
+        timeout: 4000,
+        onClosed: function () {
+            window.location.href = '/ADM/GerenciarProduto';
+        }
+    });
 }
 
-/* Função do Menu Hamburguer */
+
+
 function menuShow() {
     let menuMobile = document.querySelector('.menu-mobile-options');
     if (menuMobile.classList.contains('open')) {

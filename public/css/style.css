@@ -10,9 +10,10 @@
 }
 
 /* Estilização do scrowbar */
-html{
+html {
     scroll-behavior: smooth;
 }
+
 body {
     background-color: #F2F2F2;
 }
@@ -170,13 +171,13 @@ header {
     margin-top: 1.5vw;
 }
 
-.especiais-image-content{
+.especiais-image-content {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.especiais-image-content img{
+.especiais-image-content img {
     width: 80%;
 }
 
@@ -336,9 +337,9 @@ header {
     background-image: url('/images/fundadores.svg');
     background-repeat: no-repeat;
     background-size: contain;
-    margin: 8vw 0;
+    margin-top: 12vw;
     width: 100%;
-    height: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -377,7 +378,7 @@ header {
 footer {
     background-color: #131313;
     width: 100%;
-    margin-top: 7.8vw;
+    margin-top: 4vw;
 }
 
 .footer-content {
@@ -465,7 +466,9 @@ footer {
 }
 
 .header-menu p {
-    font-size: 1.46vw;
+    font-size: 2vw;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
 }
 
 .header-username {
@@ -484,8 +487,12 @@ footer {
 }
 
 .option-select {
+    font-family: 2vw;
     padding: 1vw;
     width: 100%;
+    transition: 0.4s;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
 }
 
 .option-select button {
@@ -493,22 +500,22 @@ footer {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 1.17vw;
-    font-weight: 300;
+    font-size: 1.3vw;
+    font-weight: 200;
 }
 
 .option-select a {
     text-decoration: none;
+    font-family: "Oswald", sans-serif;
     color: #F2CB05;
-    font-weight: 300;
+    font-weight: 200;
     transition: 0.5s;
-    font-size: 1.17vw;
+    font-size: 1.3vw;
 }
 
 .option-select a:hover {
     color: #f2cb0561;
     transition: 0.5s;
-    font-size: 1.17vw;
 }
 
 .option-adm a:hover {
@@ -520,12 +527,28 @@ footer {
     margin-top: 3.66vw;
 }
 
+.option-select.active {
+    transition: 0.4s ease;
+    border-top: 2px solid #ffd000;
+    border-bottom: 2px solid #F2CB05;
+}
+
+.option-select.active a{
+    color: #F2CB05;
+    font-weight: 300;
+}
+
+
 .image-menu {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.image-menu>a>img {
+    width: 6vw;
 }
 
 .cardapio {
@@ -561,7 +584,7 @@ footer {
     width: 90%;
 }
 
-.content-cardapio a{
+.content-cardapio a {
     text-decoration: none;
     transition: 0.6s;
 }
@@ -580,12 +603,12 @@ footer {
 
 .cardapio-tittle h1 {
     color: #F2CB05;
-    font-size: 2.19vw;
+    font-size: 1.8vw;
     font-family: "Oswald", sans-serif;
 }
 
 .container-cardapio {
-    width: 16.8vw;
+    width: 18vw;
     height: 22vw;
     box-shadow: 0.14vw 0.14vw 0.73vw 0.14vw #c3c3c3;
     margin: 1.46vw 0.37vw;
@@ -604,9 +627,11 @@ footer {
     padding: 0.6vw 0;
 }
 
-.container-cardapio p, span {
+.container-cardapio p,
+.container-cardapio>p>span {
     font-family: "Oswald", sans-serif;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.5vw;
 }
 
 .image-cardapio {
@@ -617,7 +642,7 @@ footer {
 }
 
 .image-cardapio img {
-    width: 60%;
+    width: 50%;
     padding-top: 2.92vw;
 }
 
@@ -634,13 +659,9 @@ footer {
     transition: 0.3s;
 }
 
-.edit-cardapio a:hover {
-    transform: scale(1.15);
-    transition: 0.3s;
-}
-
+.edit-cardapio a>i:hover,
 .form-excluir input:hover {
-    transform: scale(1.15);
+    color: #c3c3c3 !important;
     transition: 0.5s;
 }
 
@@ -665,9 +686,11 @@ footer {
     padding: 0.6vw 0;
 }
 
-.description-cardapio p, span {
+.description-cardapio>p,
+.description-cardapio>p>span {
     font-family: "Oswald", sans-serif;
     font-weight: 500;
+    font-size: 1.6vw
 }
 
 
@@ -681,7 +704,7 @@ footer {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -1018,7 +1041,7 @@ footer {
     color: #F2CB05;
 }
 
-.tabela-infos td{
+.tabela-infos td {
     color: white;
 }
 
@@ -1030,7 +1053,7 @@ footer {
 
 
 
-.img-edit-produto{
+.img-edit-produto {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -1038,13 +1061,13 @@ footer {
     margin-top: 2.19vw;
 }
 
-.content-input-adicionar{
+.content-input-adicionar {
     align-items: baseline;
     display: flex;
     justify-content: end;
 }
 
-.content-input-adicionar img{
+.content-input-adicionar img {
     margin-top: 1.10vw;
 }
 
@@ -1059,26 +1082,26 @@ footer {
 
 
 
-.detalhes{
+.detalhes {
     width: 100%;
     height: 100vh;
     background-color: #f2cb5716;
 }
 
-.header-detalhes-content a{
+.header-detalhes-content a {
     text-decoration: none;
     color: #F2CB05;
     font-size: 1.46vw;
     font-weight: bold;
 }
 
-.container-detalhes{
+.container-detalhes {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.box-detalhes{
+.box-detalhes {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1087,12 +1110,12 @@ footer {
     border-radius: 4vw;
 }
 
-.box-detalhes h1{
+.box-detalhes h1 {
     color: #F2CB05;
     font-size: 1.83vw;
 }
 
-.detalhes-image{
+.detalhes-image {
     background-color: white;
     width: 50%;
     height: 100%;
@@ -1104,11 +1127,11 @@ footer {
     border: 2px solid #F2CB05;
 }
 
-.detalhes-image img{
+.detalhes-image img {
     width: 70%;
 }
 
-.detalhes-descricao{
+.detalhes-descricao {
     height: 100%;
     background-color: black;
     width: 50%;
@@ -1121,23 +1144,23 @@ footer {
     border: 0.14vw 0.14vw 0.14vw 0 solid #F2CB05;
 }
 
-.detalhes-descricao p{
+.detalhes-descricao p {
     text-align: center;
     padding: 0.73vw;
 }
 
-.detalhes-descricao h1{
+.detalhes-descricao h1 {
     font-family: "Seymour One", sans-serif;
     font-size: 1.8vw;
 }
 
-.detalhes-descricao img{
+.detalhes-descricao img {
     width: 20%;
     border: 0.073vw solid #C3C3C3;
     border-radius: 0.73vw;
 }
 
-.detalhes-descricao button{
+.detalhes-descricao button {
     transition: 0.5s;
 }
 
@@ -1146,7 +1169,7 @@ footer {
     transition: 0.5s;
 }
 
-.pedido{
+.pedido {
     background-color: #F2CB05;
     color: white;
     padding: 0.9vw 2.92vw;
@@ -1156,5 +1179,3 @@ footer {
     border: none;
     cursor: pointer;
 }
-
-

@@ -28,7 +28,8 @@
                     <a href="/ADM/adicionarProduto">Adicionar Produto</a>
                 </div>
                 <div style="display: flex; widht: 100%; justify-content: center; margin-top: 20px;" class="button-sair">
-                    <form style="margin-left: 15px;" action="/Sair"><button onclick="Sair()" type="submit">Sair</button></form>
+                    <form style="margin-left: 15px;" action="/Sair"><button onclick="Sair()" type="submit">Sair</button>
+                    </form>
                 </div>
             </div>
 
@@ -46,12 +47,12 @@
 
         <div class="img-edit-produto">
             {{#each CardEdit}}
-                <div class="img-edit-content">
-                    <img width="150" src="{{this.IMGComida}}" alt="">
-                </div>
-                <div class="img-edit-content">
-                    <img style="border-radius: 10px;" width="80" src="{{this.IMGPais}}" alt="">
-                </div>
+            <div class="img-edit-content">
+                <img width="150" src="{{this.IMGComida}}" alt="">
+            </div>
+            <div class="img-edit-content">
+                <img style="border-radius: 10px;" width="80" src="{{this.IMGPais}}" alt="">
+            </div>
             {{/each}}
         </div>
 

@@ -6,53 +6,50 @@
             </div>
         </div>
         <div class="options-menu">
-            <div class="option-select">
+            <div class="option-select {{#if (eq Titulo 'Todos os Pratos')}}active{{/if}}">
                 <a href="/cardapio">Todos os Pratos</a>
             </div>
-            <div class="option-select">
-                <a href="/cardapio/Hambúrguer">Hambúrguers</a>
+            <div class="option-select {{#if (eq Titulo 'Hambúrguer')}}active{{/if}}">
+                <a href="/cardapio/Hambúrguer">Hambúrguer</a>
             </div>
-            <div class="option-select">
+            <div class="option-select {{#if (eq Titulo 'Porções')}}active{{/if}}">
                 <a href="/cardapio/Porções">Porções</a>
             </div>
-            <div class="option-select">
+            <div class="option-select {{#if (eq Titulo 'Bebidas')}}active{{/if}}">
                 <a href="/cardapio/Bebidas">Bebidas</a>
             </div>
         </div>
 
         <div class="image-menu">
-            <a href="/"><img src="/images/logo.svg" alt=""></a>
+            <a href="/"><img src="/images/logo.svg" alt="Logo"></a>
         </div>
     </section>
 
     <section class="cardapio">
 
         {{> menuUser}}
-        
+
         <div class="cardapio-tittle">
-            <h1>CARDÁPIO FILTRADO</h1>
+            <h1>{{Titulo}}</h1>
             <div class="button-sair">
-                <form action="/Sair"><button onclick="Sair()" type="submit">Sair</button></form>
+                <form action="/Sair">
+                    <button onclick="Sair()" type="submit">Sair</button>
+                </form>
             </div>
         </div>
-
 
         <div class="content-cardapio">
             {{#each CardComida}}
             <a href="/cardapio/produto/{{this.ComidaID}}">
                 <div class="container-cardapio">
-
-                        <img width="60%" style="padding-top: 0px ;" src="{{this.IMGComida}}" alt="">
-                        <h2>{{this.NomeComida}}</h2>
-                        <p style="color: black;">R$ <span style="color: #F2CB05">{{this.PrecoComida}}</span></p>
-
-                        <img width="20%" style="border-radius: 5px;" src="{{this.IMGPais}}" alt="">
-
+                    <img width="50%" style="padding-top: 0px;" src="{{this.IMGComida}}" alt="{{this.NomeComida}}">
+                    <h2>{{this.NomeComida}}</h2>
+                    <p style="color: black;">R$ <span style="color: #F2CB05;">{{this.PrecoComida}}</span></p>
+                    <img width="17%" style="border-radius: 5px;" src="{{this.IMGPais}}" alt="Bandeira">
                 </div>
             </a>
             {{/each}}
         </div>
 
     </section>
-
 </section>

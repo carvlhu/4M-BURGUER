@@ -9,6 +9,25 @@ const app = express();
 app.use(express.json());
 app.use(express.static('public'));
 
+const handlebars = require('express-handlebars');
+const Handlebars = require('handlebars');
+
+// Configuração do Handlebars
+app.engine(
+    'handlebars',
+    handlebars.engine({
+        defaultLayout: 'main',
+        extname: '.handlebars',
+    })
+);
+app.set('view engine', 'handlebars');
+
+// Registrar o helper "eq"
+Handlebars.registerHelper('eq', function (a, b) {
+    return a === b;
+});
+
+
 app.use(
     express.urlencoded({
         extended: true,
@@ -29,7 +48,7 @@ function userLogado(req, res) {
     }
 }
 
-function admLogado (req, res) {
+function admLogado(req, res) {
     const adm = req.session.idDoUserLogado;
 
     if (adm != 1) {
@@ -145,7 +164,7 @@ app.get('/cardapio', (req, res) => {
 
         const CardComida = data;
 
-        conn.query(nomeLogado, function(err, data) {
+        conn.query(nomeLogado, function (err, data) {
             if (err) {
                 console.log("Erro: ", err)
                 return
@@ -160,12 +179,12 @@ app.get('/cardapio', (req, res) => {
 
 app.get('/cardapio/produto/:id', (req, res) => {
     userLogado(req, res);
-    const IDComida  = req.params.id;
+    const IDComida = req.params.id;
     const sql = `SELECT * FROM Comida WHERE ComidaID = '${IDComida}'`
 
-    conn.query(sql, function(err, data){
+    conn.query(sql, function (err, data) {
         if (err) {
-            console.log("Erro: ", err); 
+            console.log("Erro: ", err);
             return;
         }
 
@@ -174,32 +193,46 @@ app.get('/cardapio/produto/:id', (req, res) => {
     })
 })
 
-app.get('/cardapio/:tipo', (req, res) => {
+app.get('/cardapio/:tipo?', (req, res) => {
     userLogado(req, res);
     const { tipo } = req.params;
-    const sqlFiltro = `SELECT * FROM Comida WHERE Tipo = "${tipo}"`;
     const UserLogado = req.session.idDoUserLogado;
-    const nomeLogado = `SELECT NomeCliente FROM Cliente WHERE ClienteID = "${UserLogado}"`
 
+    // Define o SQL baseado no parâmetro da rota
+    let sqlFiltro = 'SELECT * FROM Comida';
+    const sqlParams = [];
+    if (tipo && tipo !== 'Todos') {
+        sqlFiltro += ' WHERE Tipo = ?';
+        sqlParams.push(tipo);
+    }
 
-    conn.query(sqlFiltro, function(err, data) {
+    const nomeLogado = `SELECT NomeCliente FROM Cliente WHERE ClienteID = ?`;
+
+    // Consulta o cardápio com ou sem filtro
+    conn.query(sqlFiltro, sqlParams, function (err, cardComidaData) {
         if (err) {
-            console.log("Erro: ", err);
-            return;
+            console.error('Erro ao consultar o cardápio:', err);
+            return res.status(500).send('Erro ao carregar o cardápio.');
         }
 
-        const CardComida = data;
-        conn.query(nomeLogado, function(err, data) {
+        const CardComida = cardComidaData;
+
+        // Consulta o nome do usuário logado
+        conn.query(nomeLogado, [UserLogado], function (err, nomeClienteData) {
             if (err) {
-                console.log("Erro: ",err);
-                return;
+                console.error('Erro ao consultar o nome do cliente:', err);
+                return res.status(500).send('Erro ao carregar informações do cliente.');
             }
 
-            const NomeCliente = data;
-            res.render('filtroCardapio', { CardComida, NomeCliente });
-        })
-    })
-})
+            const NomeCliente = nomeClienteData;
+            const Titulo = tipo && tipo !== 'Todos' ? tipo : 'Todos os Pratos'; // Título dinâmico
+
+            // Renderiza a página com os dados
+            res.render('filtroCardapio', { CardComida, NomeCliente, Titulo });
+        });
+    });
+});
+
 
 app.post('/fazerPedido/:id', (req, res) => {
     const IDCliente = req.session.idDoUserLogado;
@@ -207,7 +240,7 @@ app.post('/fazerPedido/:id', (req, res) => {
     const sql = `INSERT INTO Pedido(ComidaID, ClienteID) VALUES ("${IDComida}","${IDCliente}");`
     console.log(sql)
 
-    conn.query(sql, function(err) {
+    conn.query(sql, function (err) {
         if (err) {
             console.log("Erro: ", err)
             return;
@@ -232,7 +265,7 @@ app.get('/ADM/GerenciarProduto', (req, res) => {
 
         const comida = data;
 
-        conn.query(sqlCard, function(err, data) {
+        conn.query(sqlCard, function (err, data) {
             if (err) {
                 console.log("Erro: ", err)
                 return;
@@ -240,7 +273,7 @@ app.get('/ADM/GerenciarProduto', (req, res) => {
 
             const CardComida = data;
 
-            res.render('gerenciarProduto', { comida, CardComida})
+            res.render('gerenciarProduto', { comida, CardComida })
         })
     })
 })
@@ -255,7 +288,7 @@ app.get('/ADM/EditarProduto/:id', (req, res) => {
     const { id } = req.params;
     const sql = `SELECT * FROM Comida WHERE ComidaID = '${id}'`;
 
-    conn.query(sql, function(err, data) {
+    conn.query(sql, function (err, data) {
         if (err) {
             console.log("Erro: ", err)
             return;
@@ -289,7 +322,7 @@ app.post('/ADM/GerenciarProduto/Adicionar', (req, res) => {
 })
 
 app.post('/ADM/GerenciarProduto/Editar', (req, res) => {
-    const { id, nomeProduto, descricao, valor, tipo, urlProduto, urlPais} = req.body;
+    const { id, nomeProduto, descricao, valor, tipo, urlProduto, urlPais } = req.body;
     const sql = `UPDATE Comida SET NomeComida = '${nomeProduto}', PrecoComida = '${valor}', DescricaoComida = '${descricao}', Tipo = '${tipo}', IMGComida = '${urlProduto}', IMGPais = '${urlPais}' WHERE ComidaID = '${id}'`;
 
     conn.query(sql, function (err) {
@@ -305,21 +338,21 @@ app.post('/ADM/GerenciarProduto/Editar', (req, res) => {
 
 app.post('/ADM/GerenciarProduto/Excluir/:id', (req, res) => {
     const { id } = req.params;
-    const sqlTable = `Delete FROM Pedido WHERE ComidaID = '${id}'`; 
+    const sqlTable = `Delete FROM Pedido WHERE ComidaID = '${id}'`;
     const sql = `DELETE FROM Comida WHERE ComidaID = '${id}'`;
 
-    conn.query(sqlTable, function(err) {
+    conn.query(sqlTable, function (err) {
         if (err) {
-            console.log("Erro: ",err);
+            console.log("Erro: ", err);
             return;
         }
-            conn.query(sql, function (err) {
-                if (err) {
-                    console.log("Erro: ", err)
-                }
-        
-                res.redirect('/ADM/GerenciarProduto');
-            })   
+        conn.query(sql, function (err) {
+            if (err) {
+                console.log("Erro: ", err)
+            }
+
+            res.redirect('/ADM/GerenciarProduto');
+        })
     })
 })
 
@@ -329,7 +362,7 @@ app.get('/ADM/GerenciarProduto/:tipo', (req, res) => {
     const { tipo } = req.params;
     const sqlFiltro = `SELECT * FROM Comida WHERE Tipo = "${tipo}"`;
 
-    conn.query(sqlFiltro, function(err, data) {
+    conn.query(sqlFiltro, function (err, data) {
         if (err) {
             console.log("Erro: ", err);
             return;
@@ -366,8 +399,8 @@ app.get('/ADM/TabelaPedidos', (req, res) => {
 app.get('/Sair', (req, res) => {
     req.session.idDoUserLogado = 0;
     res.redirect('/');
-})
-
+    console.log("usuário saiu")
+});
 
 
 // Conectando com o banco de dados mysql
