@@ -923,27 +923,29 @@ footer {
 .input-parts {
     display: flex;
     flex-direction: column;
-    justify-self: end;
-    align-items: end;
+    width: 30%;
 }
 
 .input-adicionar {
-    padding: 2.20vw 0;
+    padding: 2vw 0;
     color: white;
 }
 
 .input-adicionar label {
     font-size: 1.2vw;
+    font-family: "Oswald", sans-serif;
 }
 
 .input-adicionar input {
-    margin-left: 0.73vw;
+    margin-top: 0.73vw;
+    width: 100%;
     border: none;
     border-bottom: 0.07vw solid #F2CB05;
     background-color: transparent;
     color: white;
     transition: 0.5s;
-    font-size: 1.22vw;
+    font-size: 1.1vw;
+    font-family: "Oswald", sans-serif;
 }
 
 .input-adicionar input::-webkit-outer-spin-button,
@@ -962,12 +964,6 @@ footer {
 }
 
 .input-adicionar input:focus:-moz-placeholder {
-    /* Firefox 18- */
-    color: transparent;
-}
-
-.input-adicionar input:focus::-moz-placeholder {
-    /* Firefox 19+ */
     color: transparent;
 }
 
@@ -975,20 +971,27 @@ footer {
     color: transparent;
 }
 
-.input-adicionar select {
-    padding: 0.36vw 0.73vw;
+.input-adicionar select, .input-adicionar select:focus, .input-adicionar select::after {
+    width: 100%;
     background-color: transparent;
     color: #F2CB05;
-    font-size: 1.32vw;
-    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.1vw;
+    border: transparent;
     cursor: pointer;
+    margin-top: 0.73vw;
+    font-family: "Oswald", sans-serif;
 }
 
-.input-adicionar select option {
+.input-adicionar>select>option {
     background-color: black;
     cursor: pointer;
+    border: transparent;
+    text-align: start;
+    font-family: "Oswald", sans-serif;
 }
-
 
 .button-adicionar {
     display: flex;
@@ -1046,23 +1049,23 @@ footer {
 }
 
 .tabela-infos table {
-    text-align: center;
     border-collapse: collapse;
     text-align: left;
-    background-color: #131313;
-    border-radius: 0.73vw;
+    background-color: #333333;
+    border-radius: 0.8vw;
 }
 
 .tabela-infos th,
 .tabela-infos td {
-    font-size: 1.1vw;
-    padding: 0.73vw 1.82vw;
+    font-size: 1vw;
+    padding: 0.85vw 2.6vw;
     text-align: center;
 }
 
 .tabela-infos th {
     background-color: #131313;
     color: #F2CB05;
+    font-size: 1.2vw;
 }
 
 .tabela-infos td {
@@ -1070,7 +1073,7 @@ footer {
 }
 
 .tabela-infos tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.405);
+    background-color: #181818;
 }
 
 

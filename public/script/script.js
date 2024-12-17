@@ -1,38 +1,75 @@
-/* Função ok */
+/* Toast - Sair da Conta */
 function Sair(event) {
     event.preventDefault();
 
-    iziToast.show({
+    iziToast.warning({
         title: 'Atenção!',
         message: 'Você sairá da conta.',
         color: 'red',
         position: 'topCenter',
-        timeout: 3500,
+        timeout: 3000,
         onClosed: function () {
             event.target.submit();
         }
     });
 }
 
-/* Fazer Função para quando as informações estiverem erradas */
+/* Toast - Validação do Login */
 function Login(event) {
     event.preventDefault();
 
-    setTimeout(() => {
-        iziToast.success({
-            title: 'Login Realizado!',
-            message: 'Você será redirecionado.',
-            color: 'black',
-            position: 'topCenter',
-            timeout: 3000,
-            onClosed: function () {
-                event.target.submit();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    fetch('/login/validacao', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                iziToast.success({
+                    title: 'Login Realizado!',
+                    message: 'Você será redirecionado.',
+                    color: 'green',
+                    position: 'topCenter',
+                    timeout: 3000,
+                    onClosed: function () {
+                        window.location.href = result.redirect;
+                    }
+                });
+            } else {
+                iziToast.error({
+                    title: 'Erro no Login',
+                    message: result.message,
+                    color: 'red',
+                    position: 'topCenter',
+                    timeout: 3000,
+                });
             }
+
+            // Limpa os campos do formulário após a resposta
+            event.target.reset();
+        })
+        .catch(error => {
+            iziToast.error({
+                title: 'Erro no Servidor',
+                message: 'Não foi possível processar o login. Tente novamente mais tarde.',
+                color: 'red',
+                position: 'topCenter',
+                timeout: 3000,
+            });
+            console.error('Erro:', error);
+
+            // Limpa os campos do formulário mesmo em caso de erro
+            event.target.reset();
         });
-    }, 200);
 }
 
-/* Função ok */
+/* Toast - Cadastro */
 function cadastro(event) {
     event.preventDefault();
 
@@ -41,7 +78,7 @@ function cadastro(event) {
         message: 'Cadastro realizado com sucesso!',
         color: 'green',
         position: 'topCenter',
-        timeout: 3500,
+        timeout: 3000,
         onClosed: function () {
             event.target.submit()
         }
@@ -57,7 +94,7 @@ function pedido(event) {
         message: 'Seu pedido foi realizado com sucesso.',
         color: 'yellow',
         position: 'topCenter',
-        timeout: 3500,
+        timeout: 3000,
         onClosed: function () {
             event.target.submit()
         }
@@ -71,9 +108,9 @@ function Edicao(event) {
     iziToast.info({
         title: 'Produto Editado!',
         message: 'Produto editado com sucesso.',
-        color: 'black',
+        color: 'green',
         position: 'topRight',
-        timeout: 2500,
+        timeout: 3000,
         onClosed: function () {
             event.target.submit();
         }
@@ -84,12 +121,12 @@ function Edicao(event) {
 function AdicionarProduto(event) {
     event.preventDefault();
 
-    iziToast.info({
+    iziToast.success({
         title: 'Produto Adicionado!',
         message: 'Produto adicionado com sucesso.',
         color: 'green',
         position: 'topRight',
-        timeout: 3500,
+        timeout: 3000,
         onClosed: function () {
             event.target.submit();
         }
@@ -100,7 +137,7 @@ function AdicionarProduto(event) {
 function ExcluirProduto(event) {
     event.preventDefault();
 
-    iziToast.show({
+    iziToast.success({
         title: 'Produto Excluído!',
         message: 'Produto será excluído.',
         color: 'red',

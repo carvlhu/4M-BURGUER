@@ -118,37 +118,32 @@ app.post('/cadastro/insertCliente', (req, res) => {
 app.post('/login/validacao', (req, res) => {
     const email = req.body.Email;
     const senha = req.body.Senha;
-    const sql = `SELECT * FROM Cliente WHERE EmailCliente = "${email}" AND SenhaCliente = "${senha}"`
+    const sql = `SELECT * FROM Cliente WHERE EmailCliente = "${email}" AND SenhaCliente = "${senha}"`;
 
     conn.query(sql, function (err, result) {
         console.log("SQL: ", sql);
         if (err) {
             console.log("Erro: ", err);
-            return res.redirect('/login');
-            // Retorna a página de login em caso de erro
+            return res.status(500).json({ success: false, message: 'Erro no servidor.' });
         }
 
         if (result.length > 0) {
+            req.session.idDoUserLogado = result[0].ClienteID;
 
             if (email === "adm@gmail.com" && senha === "adm123") {
-
-                console.log("Administrador encontrado")
-                req.session.idDoUserLogado = result[0].ClienteID;
-                res.redirect('/ADM/GerenciarProduto');
+                console.log("Administrador encontrado");
+                return res.status(200).json({ success: true, redirect: '/ADM/GerenciarProduto' });
             } else {
-                // Se houver algum resultado, renderizará a página de cardápio
-                req.session.idDoUserLogado = result[0].ClienteID;
-                res.redirect('/cardapio');
                 console.log("Usuário encontrado");
+                return res.status(200).json({ success: true, redirect: '/cardapio' });
             }
-
         } else {
-            // Se não houver resultados, significa que o email/senha estão incorretos
             console.log('Email ou senha incorretos');
-            res.redirect('/login');
+            return res.status(401).json({ success: false, message: 'Email ou senha incorretos.' });
         }
-    })
-})
+    });
+});
+
 
 
 // Rota do Cardápio 
