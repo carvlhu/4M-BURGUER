@@ -35,7 +35,7 @@ body::-webkit-scrollbar-thumb {
 
 main {
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 .menu-mobile {
@@ -55,7 +55,6 @@ main {
 }
 
 .button-sair button {
-    margin: 0.7322vw 0;
     padding: 0.880vw 2.20vw;
     background-color: #F2CB05;
     border: 0.15vw solid #F2CB05;
@@ -84,7 +83,7 @@ main {
 
 header {
     display: flex;
-    padding: 1.5vw 1.5vw 0px 3.1vw;
+    padding: 1.5vw 3.1vw 0 3.1vw;
     justify-content: space-between;
     align-items: center;
 }
@@ -122,7 +121,7 @@ header {
     padding: 6.25vw 0px 0px 6.25vw;
 }
 
-.infos-home h1 {
+.infos-home>h1, .infos-home>h1>span {
     font-size: 3.1vw;
     margin-bottom: 1.5vw;
     font-weight: normal;
@@ -249,6 +248,15 @@ header {
     justify-content: center;
 }
 
+.especiarias-tittle>h1{
+    font-size: 1.9vw !important;
+    font-family: "Oswald", sans-serif;
+}
+
+.especiarias-tittle>p, .especiarias-tittle>p>span{
+    font-size: 1.4vw;
+}
+
 .especiarias-card {
     width: 100%;
     display: flex;
@@ -292,11 +300,14 @@ header {
 
 .michelin {
     background-image: url('/images/michelin.svg');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
     width: 100%;
-    height: 80%;
-    margin-top: 10vw;
+    height: auto;
+    border-bottom: 1vw solid #F2CB05;
+    border-top: 1vw solid #F2CB05;
+    margin-top: 12vw;
 }
 
 .michelin-infos {
@@ -336,25 +347,30 @@ header {
 .fundadores {
     background-image: url('/images/fundadores.svg');
     background-repeat: no-repeat;
-    background-size: contain;
-    margin-top: 12vw;
+    background-size: cover;
+    background-position: center;
+    margin: 9vw 0;
     width: 100%;
-    height: 100%;
+    height: auto;
+    padding: 4vw 0;
+    border-top: #F2CB05 1vw solid;
+    border-bottom: #F2CB05 1vw solid;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     color: white;
 }
 
 .fundadores-tittle {
     color: #F2CB05;
-    font-size: 3.5vw;
-    padding: 3.1vw;
+    padding-bottom: 3vw;
 
 }
 
-.fundadores-tittle h2 {
+.fundadores-tittle>h2 {
     font-family: "Oswald", sans-serif;
+    font-size: 3vw;
 }
 
 .fundadores-info {
@@ -399,6 +415,7 @@ footer {
 .footer-infos-content p {
     color: white;
     width: 90%;
+    font-size: 1vw;
     margin-top: 1.5vw;
 }
 
@@ -426,9 +443,10 @@ footer {
 }
 
 .copy-rigth {
-    border-top: solid 0.15vw white;
+    border-top: solid 0.15vw rgb(138, 138, 138);
     margin-top: 2.3vw;
-    color: white;
+    color: rgb(129, 129, 129);
+    font-size: 1vw;
     padding: 0.7vw 0;
 }
 
@@ -487,12 +505,13 @@ footer {
 }
 
 .option-select {
-    font-family: 2vw;
+    font-family: "Oswald", sans-serif;
     padding: 1vw;
     width: 100%;
     transition: 0.4s;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
+    transition: 0.3s;
 }
 
 .option-select button {
@@ -524,11 +543,10 @@ footer {
 }
 
 .option-adm {
-    margin-top: 3.66vw;
+    margin-top: 2.5vw;
 }
 
 .option-select.active {
-    transition: 0.4s ease;
     border-top: 2px solid #ffd000;
     border-bottom: 2px solid #F2CB05;
 }
@@ -547,7 +565,7 @@ footer {
     justify-content: center;
 }
 
-.image-menu>a>img {
+.image-menu>img {
     width: 6vw;
 }
 
@@ -693,6 +711,10 @@ footer {
     font-size: 1.6vw
 }
 
+.description-cardapio>h4{
+    font-size: 1.1vw;
+}
+
 
 
 
@@ -750,10 +772,8 @@ footer {
 
 .login-tittle h2 {
     color: #F2CB05;
-    margin-top: 1.83vw;
     font-size: 6.59vw;
     font-family: "Oswald", sans-serif;
-    line-height: 2.92vw;
 }
 
 .inputs-account {
@@ -820,6 +840,10 @@ footer {
     justify-content: end;
     margin-top: 3.66vw;
     transition: 0.3s;
+}
+
+.submit-login>a>span{
+    font-size: 1vw;
 }
 
 .submit-login button {
@@ -1085,20 +1109,30 @@ footer {
 .detalhes {
     width: 100%;
     height: 100vh;
-    background-color: #f2cb5716;
+    background-color: #F7F6F2;
 }
 
-.header-detalhes-content a {
+.header-detalhes-content>a {
     text-decoration: none;
     color: #F2CB05;
-    font-size: 1.46vw;
+    font-size: 1.8vw;
     font-weight: bold;
+    font-family: "Oswald", sans-serif;
+}
+
+.header-detalhes-content>a>i{
+    transform: rotate(270deg);
+}
+
+.header-detalhes-content>img{
+    width: 5vw;
 }
 
 .container-detalhes {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 75%;
 }
 
 .box-detalhes {
@@ -1106,76 +1140,85 @@ footer {
     align-items: center;
     justify-content: center;
     width: 58.5vw;
-    height: 29.3vw;
+    height: 34vw;
     border-radius: 4vw;
 }
 
 .box-detalhes h1 {
     color: #F2CB05;
     font-size: 1.83vw;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
 }
 
 .detalhes-image {
-    background-color: white;
+    background-color: #3F3F3F;
     width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
+    padding: 2vw 0;
     border-radius: 0.73vw 0 0 0.73vw;
-    border: 2px solid #F2CB05;
 }
 
 .detalhes-image img {
-    width: 70%;
+    width: 65%;
 }
 
 .detalhes-descricao {
     height: 100%;
-    background-color: black;
+    background-color: #1F1F1F;
     width: 50%;
+    padding: 7% 3vw;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
     color: white;
     border-radius: 0 0.73vw 0.73vw 0;
-    border: 0.14vw 0.14vw 0.14vw 0 solid #F2CB05;
 }
 
 .detalhes-descricao p {
     text-align: center;
     padding: 0.73vw;
+    font-size: 1vw;
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
 }
 
-.detalhes-descricao h1 {
+.detalhes-descricao>h1 {
     font-family: "Seymour One", sans-serif;
+    font-size: 2.4vw;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.detalhes-descricao>h2,span {
+    font-family: "Oswald", sans-serif;
     font-size: 1.8vw;
 }
 
 .detalhes-descricao img {
-    width: 20%;
-    border: 0.073vw solid #C3C3C3;
+    width: 4vw;
     border-radius: 0.73vw;
-}
-
-.detalhes-descricao button {
-    transition: 0.5s;
 }
 
 .detalhes-descricao button:hover {
     transform: scale(0.95);
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .pedido {
     background-color: #F2CB05;
+    transition: 0.4s;
     color: white;
-    padding: 0.9vw 2.92vw;
-    border-radius: 1.46vw;
+    padding: 1.2vw 4vw;
+    border-radius: 3vw;
     font-size: 1vw;
     font-weight: 500;
     border: none;
     cursor: pointer;
+    font-family: "MPlus2", sans-serif;
 }

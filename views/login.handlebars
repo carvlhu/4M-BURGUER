@@ -14,7 +14,7 @@
 
 
                 <div class="inputs-account">
-                    <form action="/login/validacao" method="post" class="form-login">
+                    <form action="/login/validacao" onsubmit="Login(event)" method="post" class="form-login">
                         <div class="input-login">
                             <label for="Email">Email:</label>
                             <div class="input-type">
@@ -27,7 +27,6 @@
                             <div class="input-type">
                                 <input type="password" id="Senha" name="Senha" required>
                             </div>
-
                         </div>
 
                         <div class="submit-login">
@@ -35,6 +34,7 @@
                             <a href="/cadastro">Não tem uma conta?<span style="color: #F2CB05;"> CADASTRE-SE</span></a>
                         </div>
                     </form>
+
 
                 </div>
 

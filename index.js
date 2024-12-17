@@ -107,6 +107,7 @@ app.post('/cadastro/insertCliente', (req, res) => {
                     return false;
                 }
                 else {
+                    console.log("Usuário criado")
                     res.redirect('/login');
                 }
             })
@@ -131,13 +132,14 @@ app.post('/login/validacao', (req, res) => {
 
             if (email === "adm@gmail.com" && senha === "adm123") {
 
+                console.log("Administrador encontrado")
                 req.session.idDoUserLogado = result[0].ClienteID;
                 res.redirect('/ADM/GerenciarProduto');
             } else {
                 // Se houver algum resultado, renderizará a página de cardápio
                 req.session.idDoUserLogado = result[0].ClienteID;
                 res.redirect('/cardapio');
-                console.log("usuario encontrado");
+                console.log("Usuário encontrado");
             }
 
         } else {
@@ -245,7 +247,7 @@ app.post('/fazerPedido/:id', (req, res) => {
             console.log("Erro: ", err)
             return;
         }
-
+        console.log("Pedido Realizado")
         res.redirect('/cardapio')
     })
 })
@@ -331,6 +333,7 @@ app.post('/ADM/GerenciarProduto/Editar', (req, res) => {
             return false;
         }
         if (sql) {
+            console.log("Produto editado")
             res.redirect('/ADM/GerenciarProduto');
         }
     })
@@ -399,7 +402,7 @@ app.get('/ADM/TabelaPedidos', (req, res) => {
 app.get('/Sair', (req, res) => {
     req.session.idDoUserLogado = 0;
     res.redirect('/');
-    console.log("usuário saiu")
+    console.log("Usuário saiu")
 });
 
 

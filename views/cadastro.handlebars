@@ -12,7 +12,7 @@
 
 
             <div class="inputs-account">
-                <form action="/cadastro/InsertCliente" method="post" class="form-login">
+                <form action="/cadastro/InsertCliente" onsubmit="cadastro(event)" method="post" class="form-login">
 
                     <div class="container-inputs">
 
@@ -53,8 +53,8 @@
                     </div>
 
                     <div class="submit-login">
-                        <button onclick="cadastro()" type="submit">Cadastrar</button>
-                        <a>Já tem uma conta? <span style="color: #f2cb05;"> FAÇA LOGIN</span></a>
+                        <button onsubmit="cadastro(event)" type="submit">Cadastrar</button>
+                        <a href="/login">Já tem uma conta? <span style="color: #f2cb05;"> FAÇA LOGIN</span></a>
                     </div>
 
                 </form>

@@ -27,7 +27,7 @@
         height: 200px;
     }
 
-    .infos-home h1 {
+    .infos-home>h1, .infos-home>h1>span {
         font-size: 20px;
     }
 
@@ -149,7 +149,7 @@
     }
 
     .container-login {
-        padding: 1vw 0 2vw 1vw;
+        padding: 2.6vw 4vw 0 4vw;
     }
 
     .especiais {
@@ -167,7 +167,7 @@
     }
 
     .especiais-images img {
-        width: 40%;
+        width: 30%;
     }
 
     .especiais-images {
@@ -298,6 +298,7 @@
         background-color: black;
         justify-content: center;
         padding: 10vw 0;
+        overflow-y: hidden;
     }
 
     .login-tittle h2 {
@@ -327,13 +328,17 @@
     }
 
     .submit-login button {
-        font-size: 15px;
+        font-size: 2vw;
         padding: 10px 40px;
     }
 
     .submit-login a {
         font-size: 10px;
         margin-bottom: 10px;
+    }
+
+    .submit-login>a>span{
+        font-size: 10px;
     }
 
     .container-inputs {

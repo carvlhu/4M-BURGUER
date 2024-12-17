@@ -21,7 +21,7 @@
         </div>
 
         <div class="image-menu">
-            <a href="/"><img src="/images/logo.svg" alt="Logo"></a>
+            <img src="/images/logo.svg" alt="Logo">
         </div>
     </section>
 
@@ -32,8 +32,8 @@
         <div class="cardapio-tittle">
             <h1>{{Titulo}}</h1>
             <div class="button-sair">
-                <form action="/Sair">
-                    <button onclick="Sair()" type="submit">Sair</button>
+                <form onsubmit="Sair(event)" action="/Sair">
+                    <button type="submit">Sair</button>
                 </form>
             </div>
         </div>

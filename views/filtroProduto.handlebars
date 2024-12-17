@@ -27,7 +27,7 @@
                     <a href="/ADM/adicionarProduto">Adicionar Produto</a>
                 </div>
                 <div style="display: flex; widht: 100%; justify-content: center; margin-top: 20px;" class="button-sair">
-                    <form style="margin-left: 15px;" action="/Sair"><button onclick="Sair()" type="submit">Sair</button>
+                    <form style="margin-left: 15px;" onsubmit="Sair(event)" action="/Sair"><button type="submit">Sair</button>
                     </form>
                 </div>
             </div>
@@ -60,8 +60,8 @@
                     <a href="/ADM/EditarProduto/{{this.ComidaID}}"><i style="color: #1853c7;"
                             class="fa-regular fa-pen-to-square"></i></a>
 
-                    <form class="form-excluir" method="post" action="/ADM/GerenciarProduto/Excluir/{{this.ComidaID}}">
-                        <input style="color: red; font-size: 1.5vw;" class="excluir" type="submit" value="🗙">
+                    <form class="form-excluir" onsubmit="ExcluirProduto(event)" method="post" action="/ADM/GerenciarProduto/Excluir/{{this.ComidaID}}">
+                        <input onsubmit="ExcluirProduto(event)" style="color: red; font-size: 1.5vw;" class="excluir" type="submit" value="🗙">
                     </form>
                 </div>
             </div>

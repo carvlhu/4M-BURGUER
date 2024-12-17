@@ -28,7 +28,7 @@
                     <a href="/ADM/adicionarProduto">Adicionar Produto</a>
                 </div>
                 <div style="display: flex; widht: 100%; justify-content: center; margin-top: 20px;" class="button-sair">
-                    <form style="margin-left: 15px;" action="/Sair"><button onclick="Sair()" type="submit">Sair</button>
+                    <form style="margin-left: 15px;" onsubmit="Sair(event)" action="/Sair"><button type="submit">Sair</button>
                     </form>
                 </div>
             </div>
@@ -58,7 +58,7 @@
 
         <div style="padding: 0;" class="box-adicionar">
 
-            <form action="/ADM/GerenciarProduto/Editar" method="post">
+            <form onsubmit="Edicao(event)" action="/ADM/GerenciarProduto/Editar" method="post">
 
                 <div style="padding: 0;" class="container-adicionar">
 
@@ -112,7 +112,7 @@
                 {{/each}}
 
                 <div class="button-adicionar">
-                    <button onclick="Edicao()" type="submit">Editar</button>
+                    <button onsubmit="Edicao(event)" type="submit">Editar</button>
                 </div>
 
         </div>
